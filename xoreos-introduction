@@ -1,0 +1,106 @@
+
+Welcome to small introduction to xoreos project tree.
+
+
+1.1. Xoreos tree.
+
+	src/common/ is common code, like streams, maths stuff, unicode
+strings, etc.
+
+	src/aurora/ is BioWare specific things, like loaders for general file
+formats (GFF, RIM, ERF, ...) or manager classes for low-level BioWare things,
+like a ResourceManager, TalkManager (for localized string resources)
+
+	src/aurora/nwscript/ is the general loader and interpreter for the
+NWScript, the BioWare script language. Not including game-specific functions,
+and the like src/events/ is input stuff, like keyboard, mouse, gamepad, timers
+etc.
+
+	src/graphics/ is everything involving graphics.
+Subdirectories for specific graphics things, like image decoders, shaders, and
+BioWare-related graphics loaders in src/graphics/aurora/
+
+	src/sound/ is the sound subsystem. Everything needed to play sound and
+music. src/sound/decoder/ has specific sound file format decoders, such as
+MP3, AAC, WMA, ...
+
+	src/video/ is for video files, i.e. cutscenes. Bink, QuickTime, XMV
+
+	src/engines/ is game specific code src/engines/aurora/ contains
+utility code used by the game logic of all games and src/engines/{nwn, nwn2,
+kotor, kotor2, jade, sonic, witcher, dragonage, dragonage2}/ is game logic for
+these specific games
+
+// Going further down...
+
+	src/engines/nwn/script/ has the Neverwinter Nights specific script
+functions and src/engines/nwn/gui/ (and subdirectories) are for the graphical
+user interface of NWN (i.e. the menus) Similar the GUI in KotOR and Jade, but
+those are not as much implemented as the NWN GUI
+
+1.2. Extra.
+
+	There's also a few things outside src/, which is 3rd party code. Like
+a: Lua script interpreter (needed for The Witcher), glew (which manages OpenGL
+extensions), utf8cpp (utility code for working with UTF-8), etc.
+
+
+build-aux and m4 is needed for the autotools build system. m4/ contains
+scripts looking for libraries we depend on (Boost, SDL2, ...); documented in
+BUILDDEP dists/ contains platform specific things, like the icons for the
+Windows and Mac OS X binaries doc/ is a directory where a Doxygen
+documentation is generated in gitstamp/ is an autotools hack thing that, on
+each build, grabs the current git revision, so that the binary contains a
+string of the git revision (and build time) as extra version information.
+
+
+
+2. Files formats.
+
+	Specific files formats:
+
+.are - Area files, like background music.
+
+.art - Grass, wind, fog, camera properties per room, etc.
+
+.dlg - Conversations files
+
+.erf - All files packed to one. (One file to rule them all)
+More information: /xoreos-docs/blob/master/specs/bioware/ERF_Format.pdf
+
+.ifo - Module info file.
+
+.itp - Palette file.
+
+.lyt - file contains specific layout of the different rooms, something like
+model files.
+
+.rim - Archive file of .erf
+
+.vis - visibility of rooms ("room to room visibility array (I.e. say, from
+room 1, you can see room 2, 5 and 7)" - DrMcCoy).
+
+.gff - This is storage for all other files. (It isn't the .erf file format)
+More information: /xoreos-docs/blob/master/specs/bioware/GFF_Format.pdf
+
+Before you ask anything, please take a look here:
+github.com/xoreos/xoreos-docs/tree/master/specs/bioware
+
+
+
+3. Additional information.
+
+	Version
+
+"xoreos 0.0.1+2728.g36f91bc.dirty"
+
+0.0.1 is the version of xoreos (in the major.minor.patch format).
+
++2728.g36f91bc.dirty is git information.
+	2728 for "2728th commit after the version that was tagged as 0.0.1".
+	g36f91bc means the git revision ID 36f91bc .
+	The .dirty means that there's uncommited changes in the tree.
+
+
+
+Guide author: DrMcCoy
