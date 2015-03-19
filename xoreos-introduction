@@ -63,28 +63,39 @@ string of the git revision (and build time) as extra version information.
 
 	Specific files formats:
 
-.are - Area files, like background music.
+.are - Static area information (like background music etc.).
 
 .art - Grass, wind, fog, camera properties per room, etc.
 
+.bif - Archive file, contains data, but .key file contains file names.
+
 .dlg - Conversations files.
 
-.erf - All files packed to one. (One file to rule them all).
+.erf - Archive file. Like .hak, .mod or .sav, but contains description of
+data of file (see also .rim), for example: used in NWN to display what a module
+is about.
 More information: /xoreos-docs/blob/master/specs/bioware/ERF_Format.pdf
+
+.git - Very similar to .are but contains dynamic objects. (except Jade
+Empire, KotOR and KotOR2 where .git files has been removed, instead simple
+objects are inside the .lyt files)
 
 .ifo - Module info file.
 
 .itp - Palette file.
 
+.key - Archive file which contains names of files from .bif files.
+
 .lyt - file contains specific layout of the different rooms, something like
 model files.
 
-.rim - Archive file of .erf .
+.rim - Basically made of .bif and .key files. Simplified version of .erf,
+doesn't contain descriptions.
 
 .vis - visibility of rooms ("room to room visibility array (I.e. say, from
 room 1, you can see room 2, 5 and 7)" - DrMcCoy).
 
-.gff - This is storage for all other files. (It isn't the .erf file format)
+.gff - This is storage for all other files. (not necessarily)
 More information: /xoreos-docs/blob/master/specs/bioware/GFF_Format.pdf
 
 Before you ask anything, please take a look here:
@@ -108,7 +119,6 @@ https://wiki.xoreos.org/index.php?title=Developer_Central
 
 4. Additional information.
 
-
 Version "xoreos 0.0.1+2728.g36f91bc.dirty"
 
 0.0.1 is the version of xoreos (in the major.minor.patch format).
@@ -120,5 +130,4 @@ Version "xoreos 0.0.1+2728.g36f91bc.dirty"
 
 
 Guide author: DrMcCoy
-
 
