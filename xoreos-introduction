@@ -2,7 +2,10 @@
 Welcome to small introduction to xoreos project tree.
 
 
-1.1. Xoreos tree.
+1.1. Xoreos tree
+git://github.com/xoreos/xoreos.git
+(or http variation)
+https://github.com/xoreos
 
 	src/common/ is common code, like streams, maths stuff, unicode
 strings, etc.
@@ -53,9 +56,10 @@ documentation is generated in gitstamp/ is an autotools hack thing that, on
 each build, grabs the current git revision, so that the binary contains a
 string of the git revision (and build time) as extra version information.
 
+2.1. xoreos docs...
+...can be found here: github.com/xoreos/xoreos-docs
 
-
-2. Files formats.
+2.2. Files formats.
 
 	Specific files formats:
 
@@ -63,9 +67,9 @@ string of the git revision (and build time) as extra version information.
 
 .art - Grass, wind, fog, camera properties per room, etc.
 
-.dlg - Conversations files
+.dlg - Conversations files.
 
-.erf - All files packed to one. (One file to rule them all)
+.erf - All files packed to one. (One file to rule them all).
 More information: /xoreos-docs/blob/master/specs/bioware/ERF_Format.pdf
 
 .ifo - Module info file.
@@ -75,7 +79,7 @@ More information: /xoreos-docs/blob/master/specs/bioware/ERF_Format.pdf
 .lyt - file contains specific layout of the different rooms, something like
 model files.
 
-.rim - Archive file of .erf
+.rim - Archive file of .erf .
 
 .vis - visibility of rooms ("room to room visibility array (I.e. say, from
 room 1, you can see room 2, 5 and 7)" - DrMcCoy).
@@ -87,12 +91,25 @@ Before you ask anything, please take a look here:
 github.com/xoreos/xoreos-docs/tree/master/specs/bioware
 
 
+3. Other important informations, or just useful links.
 
-3. Additional information.
+Code formatting conventions
+https://wiki.xoreos.org/index.php?title=Code_Formatting_Conventions
 
-	Version
+IRC information
+https://wiki.xoreos.org/index.php?title=IRC_channel
 
-"xoreos 0.0.1+2728.g36f91bc.dirty"
+Wiki pages list
+https://wiki.xoreos.org/index.php?title=Special:LongPages
+
+Quick dev tutorial
+https://wiki.xoreos.org/index.php?title=Developer_Central
+
+
+4. Additional information.
+
+
+Version "xoreos 0.0.1+2728.g36f91bc.dirty"
 
 0.0.1 is the version of xoreos (in the major.minor.patch format).
 
@@ -102,5 +119,6 @@ github.com/xoreos/xoreos-docs/tree/master/specs/bioware
 	The .dirty means that there's uncommited changes in the tree.
 
 
-
 Guide author: DrMcCoy
+
+
