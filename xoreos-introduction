@@ -71,9 +71,7 @@ string of the git revision (and build time) as extra version information.
 
 .dlg - Conversations files.
 
-.erf - Archive file. Like .hak, .mod or .sav, but contains description of
-data of file (see also .rim), for example: used in NWN to display what a module
-is about.
+.erf - Archive file. For example, .hak, .crf, .nwm, .mod and .sav are ERF.
 More information: /xoreos-docs/blob/master/specs/bioware/ERF_Format.pdf
 
 .git - Very similar to .are but contains dynamic objects. (except Jade
@@ -95,7 +93,8 @@ doesn't contain descriptions.
 .vis - visibility of rooms ("room to room visibility array (I.e. say, from
 room 1, you can see room 2, 5 and 7)" - DrMcCoy).
 
-.gff - This is storage for all other files. (not necessarily)
+GFF - Format of files to store data. For example, the .ifo, .are, .dlg, etc.
+files are in GFF.
 More information: /xoreos-docs/blob/master/specs/bioware/GFF_Format.pdf
 
 Before you ask anything, please take a look here:
